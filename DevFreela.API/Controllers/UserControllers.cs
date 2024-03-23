@@ -7,13 +7,14 @@ namespace DevFreela.API.Controllers
     [Route("api/users")]
     public class UserControllers : ControllerBase
     {
-
+        //api/users/1
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             return Ok();
         }
 
+        //api/users
         [HttpPost]
         public IActionResult Post([FromBody] CreateUserModel createUserModel)
         {

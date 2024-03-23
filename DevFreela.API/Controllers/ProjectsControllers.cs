@@ -65,7 +65,7 @@ namespace DevFreela.API.Controllers
 
         //api/project/59/comment
 
-        [HttpPost("{id/comments}")]
+        [HttpPost("{id}/comments")]
         public IActionResult PostComments(int id,[FromBody] CreateCommentModel createCommentModel)
         {
             return NoContent();
@@ -78,7 +78,7 @@ namespace DevFreela.API.Controllers
         }
 
         //api/project/1/finish
-        [HttpPut("{id/finish}")]
+        [HttpPut("{id}/finish")]
         public IActionResult Finish(int id)
         {
             return NoContent();
