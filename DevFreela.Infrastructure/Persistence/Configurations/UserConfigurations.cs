@@ -23,4 +23,5 @@ namespace DevFreela.Infrastructure.Persistence.Configurations
                 .HasForeignKey(u => u.IdSkill)
                 .OnDelete(DeleteBehavior.Restrict);
         }
+    }
 }
