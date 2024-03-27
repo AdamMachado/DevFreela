@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevFreela.Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace DevFreela.Application.ViewModels
 {
     public class ProjectDetailsViewModel
     {
-        public ProjectDetailsViewModel(int id, string title, string description, decimal totalCost, DateTime? startedAt, DateTime? finishedAt)
+        public ProjectDetailsViewModel(int id, string title, string description, decimal totalCost, DateTime? startedAt, DateTime? finishedAt,string clienteFullName,string freelancerFullName)
         {
             this.id = id;
             Title = title;
@@ -16,6 +17,8 @@ namespace DevFreela.Application.ViewModels
             TotalCost = totalCost;
             StartedAt = startedAt;
             FinishedAt = finishedAt;
+            ClienteFullName = clienteFullName;
+            FreelancerFullName = freelancerFullName;
         }
 
         public int id { get;private set; }
@@ -24,5 +27,7 @@ namespace DevFreela.Application.ViewModels
         public decimal TotalCost { get;private set; }
         public DateTime? StartedAt { get;private set; }
         public DateTime? FinishedAt { get;private set; }
+        public string ClienteFullName { get; set; }
+        public string FreelancerFullName { get; set; }
     }
 }
