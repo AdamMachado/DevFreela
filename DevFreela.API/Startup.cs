@@ -1,7 +1,9 @@
 using DevFreela.API.Model;
+using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Application.Services.Implementatios;
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Infrastructure.Persistence;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,7 +33,7 @@ namespace DevFreela.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<OpeningTimeOption>(Configuration.GetSection("OpeningTime"));
+            //services.Configure<OpeningTimeOption>(Configuration.GetSection("OpeningTime"));
 
             var connectionString = Configuration.GetConnectionString("DevFreelaCs");
 
@@ -42,6 +44,9 @@ namespace DevFreela.API
 
 
             services.AddControllers();
+
+            services.AddMediatR(typeof(CreateProjectCommand));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DevFreela.API", Version = "v1" });
