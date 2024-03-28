@@ -26,12 +26,7 @@ namespace DevFreela.Application.Services.Implementatios
 
         public List<SkillViewModel> GetAll()
         {
-            using(var sqlConnection = new SqlConnection(_connectionString))
-            {
-                sqlConnection.Open();
-                var script = "SELECT Id, Description FROM Skills";
-                return sqlConnection.Query<SkillViewModel>(script).ToList();
-            }
+           
 
             //var skills = _dbContext.Skills;
             //var skillsViewModel = skills

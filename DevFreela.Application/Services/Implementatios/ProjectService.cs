@@ -25,13 +25,7 @@ namespace DevFreela.Application.Services.Implementatios
             _connectionString = configuration.GetConnectionString("DevFreelaCs");
 
         }
-        public int Create(NewProjectInputModel inputModel)
-        {
-            var project = new Project(inputModel.Title, inputModel.Description, inputModel.IdClient, inputModel.IdFreelancer, inputModel.TotalCost);
-            _dbContext.Projects.Add(project);
-            _dbContext.SaveChanges();
-            return project.Id;
-        }
+
 
 
         public void Finish(int id)
@@ -42,16 +36,7 @@ namespace DevFreela.Application.Services.Implementatios
             _dbContext.SaveChanges();
         }
 
-        public List<ProjectViewModel> GetAll(string query)
-        {
-            var projects = _dbContext.Projects;
-            var projectViewModel = projects
-                .Select(p => new ProjectViewModel(p.Id,p.Title,p.CreatedAt))
-                .ToList();
-            return projectViewModel;
 
-
-        }
 
         public ProjectDetailsViewModel GetById(int id)
         {
