@@ -33,21 +33,6 @@ namespace DevFreela.Application.Services.Implementatios
             return project.Id;
         }
 
-        public void CreateComment(CreateCommentInputModel inputModel)
-        {
-            var comment = new ProjectComment(inputModel.Content, inputModel.IdProject, inputModel.IdUser);
-            _dbContext.ProjectComments.Add(comment);
-            _dbContext.SaveChanges();
-
-        }
-
-        public void Delete(int id)
-        {
-            var project = _dbContext.Projects.SingleOrDefault(p => p.Id == id);
-
-            project.Cancel();
-            _dbContext.SaveChanges();
-        }
 
         public void Finish(int id)
         {
@@ -103,12 +88,6 @@ namespace DevFreela.Application.Services.Implementatios
                 sqlConnection.Execute(script, new { status = project.Status, startedat = project.StartedAt, id });
             }
         }
-       
-        public void Update(UpdateProjectInputModel inputModel)
-        {
-            var project = _dbContext.Projects.SingleOrDefault(p => p.Id == inputModel.Id);
-            project.Update(inputModel.Title, inputModel.Description, inputModel.TotalCost);
-            _dbContext.SaveChanges();
-        }
+
     }
 }
