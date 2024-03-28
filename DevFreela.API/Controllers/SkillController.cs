@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace DevFreela.API.Controllers
 {
+    [Route("api/skill")]
     public class SkillController : ControllerBase
     {
         private readonly IMediator _mediator;

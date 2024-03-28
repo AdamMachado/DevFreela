@@ -29,6 +29,13 @@ namespace DevFreela.Application.Queries.GetAllSkills
                 var script = "SELECT Id, Description FROM Skills";
                 var skills =  await sqlConnection.QueryAsync<SkillViewModel>(script);
                 return skills.ToList();
+
+
+                //var skills = _dbContext.Skills;
+                //var skillsViewModel = skills
+                //    .Select(s=> new SkillViewModel(s.Id,s.Description))
+                //    .ToList();
+                //return skillsViewModel;
             }
         }
     }

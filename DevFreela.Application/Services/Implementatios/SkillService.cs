@@ -24,15 +24,6 @@ namespace DevFreela.Application.Services.Implementatios
             _connectionString = configuration.GetConnectionString("DevFreelaCs");
         }
 
-        public List<SkillViewModel> GetAll()
-        {
-           
 
-            //var skills = _dbContext.Skills;
-            //var skillsViewModel = skills
-            //    .Select(s=> new SkillViewModel(s.Id,s.Description))
-            //    .ToList();
-            //return skillsViewModel;
-        }
     }
 }
