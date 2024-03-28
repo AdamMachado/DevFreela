@@ -41,6 +41,7 @@ namespace DevFreela.API
 
             services.AddScoped<IProjectService, ProjectService>();
             services.AddScoped<ISkillService, SkillService>();
+            services.AddScoped<IUserService, UserService>();
 
 
             services.AddControllers();
