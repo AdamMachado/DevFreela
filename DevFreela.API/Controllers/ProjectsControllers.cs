@@ -1,9 +1,12 @@
 ﻿using DevFreela.API.Model;
 using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Application.Commands.DeleteProject;
+using DevFreela.Application.Commands.FinishProject;
+using DevFreela.Application.Commands.StartedProject;
 using DevFreela.Application.Commands.UpdateProject;
 using DevFreela.Application.InputModels;
 using DevFreela.Application.Queries.GetAllProjects;
+using DevFreela.Application.Queries.GetProjectById;
 using DevFreela.Application.Services.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -38,15 +41,18 @@ namespace DevFreela.API.Controllers
 
         //api/project/599
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
             //Busca o projeto
-            var project = _projectService.GetById(id);
+            var query = new GetProjectByIdQuery(id);
 
-            if(project == null)
+            var project = await _mediator.Send(query);
+
+            if (project == null)
             {
                 return NotFound();
             }
+
             return Ok(project);
         }
         
@@ -102,18 +108,19 @@ namespace DevFreela.API.Controllers
 
         //api/project/1/start
         [HttpPut("{id}/start")]
-        public IActionResult Start(int id)
+        public async Task<IActionResult> Start(int id)
         {
-            _projectService.Start(id);
+            var command = new StartProjectCommand(id);
+            await _mediator.Send(command);
 
             return NoContent();
         }
 
-        //api/project/1/finish
-        [HttpPut("{id}/finish")]
-        public IActionResult Finish(int id)
+        //api/project/1/finish       [HttpPut("{id}/finish")]
+        public async Task<IActionResult> Finish(int id)
         {
-            _projectService.Finish(id);
+            var command = new FinishProjectCommand(id);
+            await _mediator.Send(command);
             return NoContent();
         }
 

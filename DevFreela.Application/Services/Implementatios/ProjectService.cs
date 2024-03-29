@@ -28,51 +28,11 @@ namespace DevFreela.Application.Services.Implementatios
 
 
 
-        public void Finish(int id)
-        {
-            var project = _dbContext.Projects.SingleOrDefault(p => p.Id == id);
-
-            project.Finish();
-            _dbContext.SaveChanges();
-        }
 
 
 
-        public ProjectDetailsViewModel GetById(int id)
-        {
-            var project = _dbContext.Projects
 
-                .Include(p => p.Client)
-                .Include(f => f.Freelancer)
-                .SingleOrDefault(p => p.Id == id);
-            if(project == null) return null;
-            var projectDetailsViewModel = new ProjectDetailsViewModel(
-                project.Id,
-                project.Title,
-                project.Description,
-                project.TotalCost,
-                project.StartedAt,
-                project.FinishedAt,
-                project.Client.FullName,
-                project.Freelancer.FullName
-                );
-            return projectDetailsViewModel;
-        }
 
-        public void Start(int id)
-        {
-            var project = _dbContext.Projects.SingleOrDefault(p => p.Id == id);
-
-            project.Start();
-            //_dbContext.SaveChanges();
-
-            using (var sqlConnection = new SqlConnection(_connectionString))
-            {
-                sqlConnection.Open();
-                var script = "UPDATE Projects SET Status = @status, StartedAt = @startedat WHERE Id = @id";
-                sqlConnection.Execute(script, new { status = project.Status, startedat = project.StartedAt, id });
-            }
-        }
 
     }
 }
