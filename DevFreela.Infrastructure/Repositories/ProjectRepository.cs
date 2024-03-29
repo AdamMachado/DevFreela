@@ -22,7 +22,7 @@ namespace DevFreela.Infrastructure.Repositories
             _connectionString = configuration.GetConnectionString("DevFreelaCs");
 
         }
-        public async Task<List<Project>> GetAll()
+        public async Task<List<Project>> GetAllAsync()
         {
             return await _dbContext.Projects.ToListAsync();
         }

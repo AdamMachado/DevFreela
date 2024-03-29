@@ -21,7 +21,7 @@ namespace DevFreela.Infrastructure.Repositories
             _connectionString = configuration.GetConnectionString("DevFreelaCs");
 
         }
-        public async Task<List<SkillDTO>> GetAll()
+        public async Task<List<SkillDTO>> GetAllAsync()
         {
             using (var sqlConnection = new SqlConnection(_connectionString))
             {
