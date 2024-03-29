@@ -116,7 +116,8 @@ namespace DevFreela.API.Controllers
             return NoContent();
         }
 
-        //api/project/1/finish       [HttpPut("{id}/finish")]
+        //api/project/1/finish
+        [HttpPut("{id}/finish")]
         public async Task<IActionResult> Finish(int id)
         {
             var command = new FinishProjectCommand(id);

@@ -41,7 +41,7 @@ namespace DevFreela.API
 
             services.AddDbContext<DevFreelaDbContext>(options => options.UseSqlServer(connectionString));
 
-            services.AddScoped<IProjectService, ProjectService>();
+
             services.AddScoped<ISkillRepository, SkillRepository>();
             services.AddScoped<IProjectRepository, ProjectRepository>();
             services.AddScoped<IUserService, UserService>();
