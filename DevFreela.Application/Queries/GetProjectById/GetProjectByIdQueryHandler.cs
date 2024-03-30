@@ -25,7 +25,7 @@ namespace DevFreela.Application.Queries.GetProjectById
 
         {
 
-            var project = await _projectRepositoy.GetById(request.Id);
+            var project = await _projectRepositoy.GetByIdAsync(request.Id);
 
             if (project == null) return null;
 
