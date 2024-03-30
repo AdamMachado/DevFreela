@@ -19,6 +19,7 @@ using FluentValidation.AspNetCore;
 using System.Linq;
 using System.Threading.Tasks;
 using DevFreela.Application.Validators;
+using DevFreela.API.Filter;
 
 namespace DevFreela.API
 {
@@ -46,7 +47,7 @@ namespace DevFreela.API
             services.AddScoped<IUserRepository, UserRepository>();
 
 
-            services.AddControllers()
+            services.AddControllers(options => options.Filters.Add(typeof(ValidateFilter)))
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserCommandValidator>());
 
             services.AddMediatR(typeof(CreateProjectCommand));
