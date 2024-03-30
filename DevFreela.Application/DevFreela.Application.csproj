@@ -13,4 +13,9 @@
     <ProjectReference Include="..\DevFreela.Infrastructure\DevFreela.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\Implementatios\" />
+    <Folder Include="Services\Interfaces\" />
+  </ItemGroup>
+
 </Project>

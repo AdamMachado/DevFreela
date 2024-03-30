@@ -1,7 +1,5 @@
 using DevFreela.API.Model;
 using DevFreela.Application.Commands.CreateProject;
-using DevFreela.Application.Services.Implementatios;
-using DevFreela.Application.Services.Interfaces;
 using DevFreela.Core.Repositories;
 using DevFreela.Infrastructure.Persistence;
 using DevFreela.Infrastructure.Repositories;
@@ -44,7 +42,7 @@ namespace DevFreela.API
 
             services.AddScoped<ISkillRepository, SkillRepository>();
             services.AddScoped<IProjectRepository, ProjectRepository>();
-            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
 
             services.AddControllers();

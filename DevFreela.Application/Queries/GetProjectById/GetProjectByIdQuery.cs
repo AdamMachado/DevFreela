@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Application.Queries.GetProjectById
 {
-    public class GetProjectByIdQuery : IRequest<ProjectDetailsViewModel>
+    public class GetProjectByIdQuery : IRequest<ProjectDetailsDTO>
     {
         public GetProjectByIdQuery(int id)
         {
