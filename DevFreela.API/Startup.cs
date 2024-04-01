@@ -20,6 +20,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using DevFreela.Application.Validators;
 using DevFreela.API.Filter;
+using DevFreela.Core.Services;
+using DevFreela.Infrastructure.Auth;
 
 namespace DevFreela.API
 {
@@ -45,6 +47,7 @@ namespace DevFreela.API
             services.AddScoped<ISkillRepository, SkillRepository>();
             services.AddScoped<IProjectRepository, ProjectRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IAuthService,AuthService>();
 
 
             services.AddControllers(options => options.Filters.Add(typeof(ValidateFilter)))

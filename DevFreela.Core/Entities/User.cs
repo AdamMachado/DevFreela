@@ -26,6 +26,9 @@ namespace DevFreela.Core.Entities
         public DateTime BirthDate { get;private set; }
         public DateTime CreatAt { get;private set; }
         public bool Active { get;private set; }
+        public string Password { get; set; }
+        public string Role { get; set; }
+
         public List<UserSkill> Skills { get; private set; }
 
         public List<Project> OwnedProjects { get;private set; }
