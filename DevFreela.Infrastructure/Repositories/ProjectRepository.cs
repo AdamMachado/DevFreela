@@ -55,15 +55,14 @@ namespace DevFreela.Infrastructure.Repositories
             }
         }
 
-        public Task DeleteAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-
-
         public async Task SaveChangesAsync()
         {
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task AddCommentAsync(ProjectComment projectComment)
+        {
+            await _dbContext.ProjectComments.AddAsync(projectComment);
             await _dbContext.SaveChangesAsync();
         }
     }

@@ -20,11 +20,26 @@ namespace DevFreela.Infrastructure.Repositories
             _dbContext = dbContext;
 
         }
+
+
+
         public async Task<User> GetById(int id)
         {
             var user = await _dbContext.Users.SingleOrDefaultAsync(u => u.Id == id);
 
             return user;
+        }
+        public async Task AddUser(User user)
+        {
+            await _dbContext.Users.AddAsync(user);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task<User> GetUserByEmailAndPassworAsync(string email, string password)
+        {
+           return await _dbContext
+                .Users
+                .SingleOrDefaultAsync(u => u.Email == email && u.Password == password);
         }
     }
 }

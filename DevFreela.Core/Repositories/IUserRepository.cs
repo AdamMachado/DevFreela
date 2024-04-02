@@ -11,5 +11,7 @@ namespace DevFreela.Core.Repositories
     public interface IUserRepository
     {
         Task<User> GetById(int id);
+        Task AddUser(User user);    
+        Task<User> GetUserByEmailAndPassworAsync(string email, string password);
     }
 }
