@@ -8,12 +8,14 @@ namespace DevFreela.Core.Entities
 {
     public class User : BaseEntity
     {
-        public User(string fullName, string email, DateTime birthDate)
+        public User(string fullName, string email, DateTime birthDate,string password,string role)
         {
             FullName = fullName;
             Email = email;
             BirthDate = birthDate;
             Active = true;
+            Role = role;
+            Password = password;
 
             CreatAt = DateTime.Now;
             Skills = new List<UserSkill>();

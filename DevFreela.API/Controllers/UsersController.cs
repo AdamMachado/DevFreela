@@ -1,5 +1,6 @@
 ﻿using DevFreela.API.Model;
 using DevFreela.Application.Commands.CreateUser;
+using DevFreela.Application.Commands.LoginUser;
 using DevFreela.Application.InputModels;
 using DevFreela.Application.Queries.GetUser;
 using DevFreela.Application.ViewModels;
@@ -47,7 +48,7 @@ namespace DevFreela.API.Controllers
 
         // api/users/1/login
         [HttpPut("login")]
-        public async Task<IActionResult> Login([FromBody] LoginUserViewModel command)
+        public async Task<IActionResult> Login([FromBody] LoginUserCommand command)
         {
 
             var loginUserViewModel = await _mediator.Send(command);
