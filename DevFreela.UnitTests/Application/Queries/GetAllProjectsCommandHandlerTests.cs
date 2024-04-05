@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace DevFreela.UnitTests.Application.Commands
+namespace DevFreela.UnitTests.Application.Queries
 {
     public class GetAllProjectsCommandHandlerTests
     {
