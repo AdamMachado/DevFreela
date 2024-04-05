@@ -12,11 +12,11 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Application.Queries.GetAllProjects
 {
-    public class GetAllProjectsQueyHandler : IRequestHandler <GetAllProjectsQuery,List<ProjectViewModel>>
+    public class GetAllProjectsQueryHandler : IRequestHandler <GetAllProjectsQuery,List<ProjectViewModel>>
     {
 
         private readonly IProjectRepository _projectRepositoy;
-        public GetAllProjectsQueyHandler(IProjectRepository projectRepositoy)
+        public GetAllProjectsQueryHandler(IProjectRepository projectRepositoy)
         {
             _projectRepositoy = projectRepositoy;
         }
@@ -25,7 +25,7 @@ namespace DevFreela.Application.Queries.GetAllProjects
         {
             var projects = await _projectRepositoy.GetAllAsync();
 
-            var projectViewModel =   projects
+            var projectViewModel = projects
                 .Select(p => new ProjectViewModel(p.Id, p.Title, p.CreatedAt))
                 .ToList();
             return projectViewModel;
