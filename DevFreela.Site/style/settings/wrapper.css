@@ -1,0 +1,9 @@
+
+
+:root{
+    --ld--main-wrapper:1366px;
+}
+
+.teste{
+    width: var(--ld--main-wrapper);
+}
