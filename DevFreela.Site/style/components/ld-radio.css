@@ -39,7 +39,7 @@
     border-radius:50%;
     position:absolute;
     content:"";
-    top:3.3px;
+    top:3px;
     left:4px;
     background-color:blue;
     display: none;

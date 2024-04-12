@@ -7,6 +7,8 @@
     outline: none;
     transition:border-color .5s;
     padding-bottom:10px;
+    width:100%; 
+    margin-bottom:32px;
 }
 
 .ld-input:focus{

@@ -1,0 +1,14 @@
+.ld-login >.ld-wrapper >.main-content >.left >.radio-buttons{
+    margin-bottom: 42px;
+}
+
+
+.ld-login >.ld-wrapper >.main-content >.left >.radio-buttons >.title{
+    font-size: calc(var(--font-size-base) + 8px);
+    margin-bottom: 16px;
+    font-weight: 800;
+
+}
+.ld-login >.ld-wrapper >.main-content >.left >.radio-buttons >.buttons >.ld-radius{
+     margin-right: 70px ; 
+}
