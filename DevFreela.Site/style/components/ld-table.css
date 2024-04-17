@@ -53,3 +53,14 @@
     font-style: normal;
       
 }
+
+.ld-table >.body >.row >.actions >.edit{
+    color: var(--ld-color-primary);
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.ld-table >.body >.row >.actions >.delete {
+    color: var(--ld-color-danger);
+    cursor: pointer;
+}
