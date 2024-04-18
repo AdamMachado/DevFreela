@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DevFreela.App</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+
+    <!--Settings-->
+    <link rel="stylesheet" href="~/settings/wrapper.css">
+    <link rel="stylesheet" href="~/settings/core.css">
+    <link rel="stylesheet" href="~/settings/color.css">
+    <link rel="stylesheet" href="~/settings/text.css">
+    <!--Generic-->
+    <link rel="stylesheet" href="~/generic/reset.css">
+    <link rel="stylesheet" href="~/generic/box-sizing.css">
+    <link rel="stylesheet" href="~/base/html.css">
+    <link rel="stylesheet" href="~/page/login.css" />
+    <link rel="stylesheet" href="~/object/ld-wrapper.css">
+    <link rel="stylesheet" href="~/components/ld-button.css">
+    <link rel="stylesheet" href="~/components/ld-header.css">
+    <link rel="stylesheet" href="~/components/ld-table.css">
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DevFreela.App.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div>
+        <div class="ld-login">
+            <div class="ld-wrapper">
+                <header class="ld-header">
+                    <div class="wrapper">
+                        <div class="logo-wrapper">
+                            <img class="image" src="assents/devfreela.svg" alt="Logo da DevFreela">
+                        </div>
+                    </div>
+
+                </header>
+                <div class="container">
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
+                </div>
+
+                <footer class="border-top footer text-muted">
+                    <div class="container">
+                        &copy; 2024 - DevFreela - <a asp-area="" asp-controller="Home" asp-action="Cadastro">Cadastro</a>
+                    </div>
+                </footer>
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="~/js/site.js" asp-append-version="true"></script>
+                @await RenderSectionAsync("Scripts", required: false)
+            </div>
+        </div>
+    </div>
+</body>
+</html>
