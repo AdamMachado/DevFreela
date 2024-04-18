@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - DevFreela.App</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> 
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,12 +22,17 @@
     <!--Generic-->
     <link rel="stylesheet" href="~/generic/reset.css">
     <link rel="stylesheet" href="~/generic/box-sizing.css">
+    <!--Base-->
     <link rel="stylesheet" href="~/base/html.css">
-    <link rel="stylesheet" href="~/page/login.css" />
+    <!--Pages-->
+    <link rel="stylesheet" href="~/pages/login.css" />
+    <!--Object-->
     <link rel="stylesheet" href="~/object/ld-wrapper.css">
+    <!--Components-->
     <link rel="stylesheet" href="~/components/ld-button.css">
+    <link rel="stylesheet" href="~/components/ld-input.css">
+    <link rel="stylesheet" href="~/components/ld-radio.css">
     <link rel="stylesheet" href="~/components/ld-header.css">
-    <link rel="stylesheet" href="~/components/ld-table.css">
 
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/DevFreela.App.styles.css" asp-append-version="true" />
@@ -37,12 +42,23 @@
         <div class="ld-login">
             <div class="ld-wrapper">
                 <header class="ld-header">
-                    <div class="wrapper">
+                    <div class="wrapper -has-user">
+                        <div>
+                        </div>
                         <div class="logo-wrapper">
-                            <img class="image" src="assents/devfreela.svg" alt="Logo da DevFreela">
+                            <img class="image" src="~/assents/devfreela.svg" alt="Logo da DevFreela">
+                        </div>
+
+                        <div class="user">
+                            <div class="info">
+                                <span class="name">Andre</span>
+                                <span class="role">Desenvolvedor</span>
+                            </div>
+                            <div class="photo-wrapper">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmrW6v_Ad1OWDd5npORzEv1PyttVY6ZhefMPeiyMz0Iw&s" alt="foto do usuário">
+                            </div>
                         </div>
                     </div>
-
                 </header>
                 <div class="container">
                     <main role="main" class="pb-3">
@@ -50,11 +66,11 @@
                     </main>
                 </div>
 
-                <footer class="border-top footer text-muted">
+@*                 <footer class="border-top footer text-muted">
                     <div class="container">
                         &copy; 2024 - DevFreela - <a asp-area="" asp-controller="Home" asp-action="Cadastro">Cadastro</a>
                     </div>
-                </footer>
+                </footer> *@
                 <script src="~/lib/jquery/dist/jquery.min.js"></script>
                 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
                 <script src="~/js/site.js" asp-append-version="true"></script>
