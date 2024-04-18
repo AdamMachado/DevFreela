@@ -18,7 +18,7 @@ namespace DevFreela.App.Controllers
             return View();
         }
 
-        public IActionResult Cadastrar()
+        public IActionResult Table()
         {
             return View();
         }
