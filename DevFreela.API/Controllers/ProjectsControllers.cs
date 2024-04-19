@@ -32,7 +32,7 @@ namespace DevFreela.API.Controllers
 
         //api/project?query=net core
         [HttpGet]
-        [Authorize(Roles="client,freelancer")]
+        //[Authorize(Roles="client,freelancer")]
         public async Task<IActionResult> Get(string query)
         {
             //Buscar todos ou filtrar
