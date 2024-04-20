@@ -16,7 +16,7 @@ namespace DevFreela.App.Controllers
             httpClien.BaseAddress = new Uri(ANDPOINT);
         }
 
-        public async Task<IActionResult> TableProject()
+        public async Task<IActionResult> Table()
             {
             try
             {

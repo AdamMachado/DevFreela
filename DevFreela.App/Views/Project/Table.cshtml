@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<DevFreela.App.Models.ProjectViewModel>
+@{
     ViewData["Title"] = "Tabela";
 }
 <h1>@ViewData["Title"]</h1>
@@ -44,6 +45,21 @@
                         </div>
                         <div class="body">
                             <div class="row">
+                                @foreach (var item in Model)
+                                {
+                                    <div class="title-description">
+                                        <h6 class="title">@item.Title</h6>
+                                        <p class="description">@item.Description</p>
+                                    </div> 
+                                    <div class="price">R$ @item.TotalCost</div>
+                                    <div class="actions">
+                                        <span class="edit material-symbols-outlined">edit</span>
+                                        <span class="delete material-symbols-outlined">delete</span>
+                                    </div>
+                                }
+                            </div>
+
+                          @*   <div class="row">
                                 <div class="title-description">
                                     <h6 class="title">Plataforma de educação</h6>
                                     <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit ipsam, earum laudantium exercitationem optio sunt voluptatem similique officia nisi quod eveniet illo laboriosam commodi magnam id odit, doloribus alias rerum?</p>
@@ -52,21 +68,9 @@
                                 <div class="actions">
                                     <span class="edit material-symbols-outlined">edit</span>
                                     <span class="delete material-symbols-outlined">delete</span>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="title-description">
-                                    <h6 class="title">Plataforma de educação</h6>
-                                    <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit ipsam, earum laudantium exercitationem optio sunt voluptatem similique officia nisi quod eveniet illo laboriosam commodi magnam id odit, doloribus alias rerum?</p>
-                                </div>
-                                <div class="price">R$ 1.000.000,00</div>
-                                <div class="actions">
-                                    <span class="edit material-symbols-outlined">edit</span>
-                                    <span class="delete material-symbols-outlined">delete</span>
 
                                 </div>
-                            </div>
+                            </div> *@
                         </div>
                     </div>
             </main>
