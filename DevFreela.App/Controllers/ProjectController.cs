@@ -16,8 +16,8 @@ namespace DevFreela.App.Controllers
             httpClien.BaseAddress = new Uri(ANDPOINT);
         }
 
-        public async Task<IActionResult> Index()
-        {
+        public async Task<IActionResult> TableProject()
+            {
             try
             {
                 List<ProjectViewModel> projects= null;

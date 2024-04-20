@@ -1,0 +1,58 @@
+﻿@model IEnumerable<DevFreela.App.Models.ProjectViewModel>
+
+@{
+    ViewData["Title"] = "TableProject";
+}
+<body>
+    <div>
+        <div class="ld-login">
+            <div class="ld-wrapper">
+                <main class="main-content">
+
+                    <h1>Index</h1>
+                    <p>
+                        <a asp-action="Create">Create New</a>
+                    </p>
+                    <table class="table">
+                        <head>
+                        <tr>
+                            <th>
+                                    @Html.DisplayNameFor(model => model.Id)
+                            </th>
+                            <th>
+                                    @Html.DisplayNameFor(model => model.Title)
+                            </th>
+                            <th>
+                                    @Html.DisplayNameFor(model => model.Description)
+                            </th>
+                            <th></th>
+                        </tr>
+                        </head>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Title)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @*                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) *@
+                                </td>
+                            </tr>
+                        }
+                    </table>
+
+
+
+            </div>
+        </div>
+    </div>
+</body>
