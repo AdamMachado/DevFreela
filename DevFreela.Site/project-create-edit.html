@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Login - DevFreela</title>
+    <title>Project - DevFreela</title>
      <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,15 +30,15 @@
      <link rel="stylesheet" href="style/components/ld-header.css">
 
     <!--Pages-->
-    <link rel="stylesheet" href="style/pages/create.css">
+    <link rel="stylesheet" href="style/pages/project-create-edit.css">
 
-    
-
+    <!-- Trumps -->
+    <!-- SCRIPT -->
 
 </head>
 <body>
     <div>
-        <div class="ld-create">
+        <div class="ld-project-create-edit">
             <div class="ld-wrapper">
                 <header class="ld-header">
                     <div class="wrapper">   
@@ -53,15 +53,15 @@
                         keyboard_arrow_left 
                     </a>
                     <div class="left">
-                        <h1 class="main-title">
-                            Vamos Cadastrar seu novo projeto!
+                        <h1 class="main-title" id="main-title">
+                            
                         </h1>
 
                         <input  class="ld-input" placeholder="Título">
                         <input  class="ld-input" placeholder="Custo Total">
                         <textarea  class="ld-input" placeholder="Descrição"></textarea>
 
-                        <button class="ld-button">Continuar</button> 
+                        <button class="ld-button" id="action-button"></button> 
                     
 
                     </div>
@@ -73,5 +73,6 @@
 
         </div>
     </div>
+    <script src="scripts/project-create-edit.js"></script>
 </body>
 </html>
